@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter/services.dart';
+import 'package:splash/home.dart';
 
 class Splash extends StatefulWidget {
   @override
@@ -11,7 +13,13 @@ class _SplashState extends State<Splash> {
   void initState() {
     // TODO: implement initState
     super.initState();
+
     SystemChrome.setEnabledSystemUIOverlays([]);
+
+    Future.delayed(Duration(seconds: 3)).then((_) => {
+          Navigator.pushReplacement(
+              context, MaterialPageRoute(builder: (context) => Home()))
+        });
   }
 
   @override
