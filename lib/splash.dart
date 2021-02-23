@@ -16,7 +16,7 @@ class _SplashState extends State<Splash> {
 
     SystemChrome.setEnabledSystemUIOverlays([]);
 
-    Future.delayed(Duration(seconds: 3)).then((_) => {
+    _checkAuth().then((_) => {
           Navigator.pushReplacement(
               context, MaterialPageRoute(builder: (context) => Home()))
         });
@@ -50,5 +50,11 @@ class _SplashState extends State<Splash> {
         ),
       ),
     );
+  }
+
+  Future<String> _checkAuth() async {
+    await Future.delayed(Duration(seconds: 3));
+
+    return null;
   }
 }
