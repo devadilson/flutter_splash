@@ -1,6 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-class Splash extends StatelessWidget {
+class Splash extends StatefulWidget {
+  @override
+  _SplashState createState() => _SplashState();
+}
+
+class _SplashState extends State<Splash> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    SystemChrome.setEnabledSystemUIOverlays([]);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
